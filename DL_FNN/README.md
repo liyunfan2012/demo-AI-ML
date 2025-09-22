@@ -1,7 +1,7 @@
 # Demo of Feedorward Neural Networks
 
 This directory contains a demo of FNN. Mathematics of FNN and FNN training are in this `README` file.
-Demo implementations in `pyTorch` and `numpy` are in [demo_pytorch](./demo_FNN.ipynb), and in [demo_numpy](./demo_FNN numpy.ipynb).
+Demo implementations in `pyTorch` and `numpy` are in [demo_FNN](./demo_FNN.ipynb), and in [demo_FNN numpy](./demo_FNN numpy.ipynb).
 
 ## Model Definition and Training
 ### Forward Pass
