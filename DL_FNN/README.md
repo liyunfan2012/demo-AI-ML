@@ -198,7 +198,7 @@ $$
 \frac{\partial J} {\partial h_K} 
 &=\frac{\partial z_K^T} {\partial h_K}\frac{\partial J} {\partial z_K} 
 = \left[\text{diag}(z_K) -z_Kz_K^T\right]\left[-\text{diag}^{-1}(z_K)y\right]\\
-& = z_K 1^Ty -y=z_K-\boldsymbol{y}.
+& = z_K 1^Ty -y=z_K-\mathbf{y}.
 \end{align}
 $$
 
