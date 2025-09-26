@@ -25,13 +25,13 @@ Each lenght $T=100$ sequence $\{x_i\}\_{i=1,\dots,100}$ is one of the 3 type of 
 The label $y$ is the type of wave, 0 for sine wave, 1 for square wave, and 2 for sawtooth wave. Train RNN to classify the type of wave.
 
 ### Model Definition
-For each $t$, $x_t\in\mathbb{R}$. Define hidden state $\mathbf{h}\_t \in \mathbf{R}^{8}$. FNN parameters for generating hidden states 
+For each $t$, $x_t\in\mathbb{R}$. Define hidden state $\mathbf{h}\_t \in \mathbb{R}^{8}$. FNN parameters for generating hidden states 
 $W_{xh}\in\mathbb{R}^{8\times 1}, W_{hh}\in\mathbb{R}^{8\times 8}, \beta_{h}\in\mathbb{R}^{8\times 1}$.
 FNN parameters for output layer $W_{ho}\in\mathbb{R}^{3\times 8}, \beta_{o}\in\mathbb{R}^{3\times 1}$.
 
 For $t=1,\dots,T-1$,
 $$
-\mathbf{h}_t = \sigma(W_{xh}x_t + W_{hh}\mathbf{h}_{t-1} + \mathbf{\beta}_h),\ \ \mathbf{h}_0=\mathbf{0}.
+\mathbf{h}\_t = \sigma(W_{xh}x\_t + W\_{hh}\mathbf{h}\_{t-1} + \mathbf{\beta}_h),\ \ \mathbf{h}_0=\mathbf{0}.
 $$
 Output $\mathbf{p}\in\mathbb{R}^{3\times 1}$ is
 $$
