@@ -30,6 +30,7 @@ $W_{xh}\in\mathbb{R}^{8\times 1}, W_{hh}\in\mathbb{R}^{8\times 8}, \beta_{h}\in\
 FNN parameters for output layer $W_{ho}\in\mathbb{R}^{3\times 8}, \beta_{o}\in\mathbb{R}^{3\times 1}$.
 
 For $t=1,\dots,T-1$,
+
 $$
 \mathbf{h}\_t = \sigma(W_{xh}x\_t + W\_{hh}\mathbf{h}\_{t-1} + \mathbf{\beta}_h),\ \ \mathbf{h}_0=\mathbf{0}.
 $$
