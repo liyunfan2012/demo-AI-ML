@@ -25,7 +25,7 @@ Each lenght $T=100$ sequence $\{x_i\}_{i=1,\dots,100}$ is one of the 3 type of w
 The label $y$ is the type of wave, 0 for sine wave, 1 for square wave, and 2 for sawtooth wave. Train RNN to classify the type of wave.
 
 ### Model Definition
-For each $t$, $x_t\in\mathbb{R}$. Define hidden state $\mathbf{h}_t \in \mathbb{R}^{8}$. FNN parameters for generating hidden states 
+For each $t$, $x_t\in\mathbb{R}$. Define hidden state ${\mathbf{h}}_t \in \mathbb{R}^{8}$. FNN parameters for generating hidden states 
 $W_{xh}\in\mathbb{R}^{8\times 1}, W_{hh}\in\mathbb{R}^{8\times 8}, \beta_{h}\in\mathbb{R}^{8\times 1}$.
 FNN parameters for output layer $W_{ho}\in\mathbb{R}^{3\times 8}, \beta_{o}\in\mathbb{R}^{3\times 1}$.
 
