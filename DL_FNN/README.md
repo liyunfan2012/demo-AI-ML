@@ -161,6 +161,7 @@ s(h) \stackrel{\text{def}}{=}\frac{\exp(h)}{1\cdot \exp(h)},
 $$
 
 and
+
 $$
 \begin{align}
 \frac{\partial s(h)}{\partial h}
