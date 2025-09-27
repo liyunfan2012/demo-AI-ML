@@ -21,11 +21,11 @@ Output vector can be calculated for each $t$ or only for the last input $\mathbf
 This section explains the mathematics of the RNN and the training in the demo [demo_RNN](./demo_RNN.ipynb).
 
 ### Training Data
-Each lenght $T=100$ sequence $\{x_i\}\_{i=1,\dots,100}$ is one of the 3 type of waves, sine, square, and sawtooth wave, with random frequency and phase.
+Each lenght $T=100$ sequence $x_{i=1,\dots,100}$ is one of the 3 type of waves, sine, square, and sawtooth wave, with random frequency and phase.
 The label $y$ is the type of wave, 0 for sine wave, 1 for square wave, and 2 for sawtooth wave. Train RNN to classify the type of wave.
 
 ### Model Definition
-For each $t$, $x_t\in\mathbb{R}$. Define hidden state ${\mathbf{h}}_t \in \mathbb{R}^{8}$. FNN parameters for generating hidden states 
+For each $t$, $x\_t\in\mathbb{R}$. Define hidden state ${\mathbf{h}}_t \in \mathbb{R}^{8}$. FNN parameters for generating hidden states 
 $W_{xh}\in\mathbb{R}^{8\times 1}, W_{hh}\in\mathbb{R}^{8\times 8}, \beta_{h}\in\mathbb{R}^{8\times 1}$.
 FNN parameters for output layer $W_{ho}\in\mathbb{R}^{3\times 8}, \beta_{o}\in\mathbb{R}^{3\times 1}$.
 
