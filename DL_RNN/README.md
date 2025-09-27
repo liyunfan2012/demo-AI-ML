@@ -45,7 +45,9 @@ $$
 
 ### Model Training
 For each record, with one-hot encoded label $\mathbf{y}$, define cross entropy loss function
+
 $$
 Loss(\mathbf{p},\mathbf{y}) = -\mathbf{y}^T \ln \mathbf{p}.  
 $$
+
 Training modelby minimizing the loss function with respect to the FNN parameters using gradient descent algorithm.
