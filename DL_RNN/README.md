@@ -21,7 +21,7 @@ Output vector can be calculated for each $t$ or only for the last input $\mathbf
 This section explains the mathematics of the RNN and the training in the demo [demo_RNN](./demo_RNN.ipynb).
 
 ### Training Data
-Each lenght $T=100$ sequence $\{x_i\}_{i=1,\dots,100}$ is one of the 3 type of waves, sine, square, and sawtooth wave, with random frequency and phase.
+Each lenght $T=100$ sequence $\{x_i\}\_{i=1,\dots,100}$ is one of the 3 type of waves, sine, square, and sawtooth wave, with random frequency and phase.
 The label $y$ is the type of wave, 0 for sine wave, 1 for square wave, and 2 for sawtooth wave. Train RNN to classify the type of wave.
 
 ### Model Definition
