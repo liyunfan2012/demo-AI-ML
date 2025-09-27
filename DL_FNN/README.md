@@ -186,7 +186,7 @@ Use cross-entropy as the loss metric
 
 
 $$
-\big\{ \big\}
+\{ a\}
 $$
 
 
