@@ -166,10 +166,10 @@ $$
 \begin{align}
 \frac{\partial s(h)}{\partial h}
 &\stackrel{(6)}{=}\frac{1}{\left[ 1 \cdot \exp(h)\right]^2}
-\left\{
+\{
     \frac{\partial \exp^T(h)}{\partial h}\left[1\cdot \exp(h)\right]
 -\frac{\partial\left[1\cdot \exp(h)\right]}{\partial h}\exp^T(h)
-\right\}\\
+\}\\
 \end{align}
 $$
 
