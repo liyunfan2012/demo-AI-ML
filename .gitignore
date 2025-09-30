@@ -1,0 +1,6 @@
+.DS_Store
+/DL_FNN/.ipynb_checkpoints
+/DL_FNN/images/.ipynb_checkpoints
+/utils/__pycache__
+/ML_xgboost/.ipynb_checkpoints
+/ML_logistic_regression/.ipynb_checkpoints
