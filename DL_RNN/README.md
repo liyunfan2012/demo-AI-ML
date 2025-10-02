@@ -51,3 +51,7 @@ Loss(\mathbf{p},\mathbf{y}) = -\mathbf{y}^T \ln \mathbf{p}.
 $$
 
 Training modelby minimizing the loss function with respect to the FNN parameters using gradient descent algorithm.
+
+## Demo RNN
+A demo of LSTM is in [demo_LSTM](./demo_LSTM.ipynb).
+
