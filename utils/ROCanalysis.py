@@ -24,18 +24,13 @@ def calculate_roc_metrics(df: pd.DataFrame, prediction_col: str, target_col: str
         df['w'], 
         aggfunc='sum', 
         normalize='columns'
-    ).rename_axis(None, axis=1)
-    
-    # Calculate AUC
-    auc = ((pdf[1].cumsum() - pdf[1] / 2) * pdf[0]).sum() * 100
-    auc = auc if auc > 50 else 100 - auc
-    
-    # Calculate Gini coefficient
-    gini = 2 * auc - 100
-    
+    ).rename_axis(None, axis=1).reindex(columns=[0, 1], fill_value=0)
     # Calculate cumulative distribution (needed for KS statistic)
-    cdf = (pdf if auc > 50 else pdf[::-1]).cumsum()
-    
+    cdf = pdf.cumsum()
+    # Calculate AUC
+    auc = ((cdf[1] - pdf[1] / 2) * pdf[0]).sum() * 100
+    # Calculate Gini coefficient
+    gini = 2 * abs(auc - 50)
     # Calculate KS statistic
     ks = (abs(cdf[1] - cdf[0])).max() * 100
     
