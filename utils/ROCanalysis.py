@@ -19,10 +19,10 @@ def calculate_roc_metrics(df: pd.DataFrame, prediction_col: str, target_col: str
     """
     # Create probability distribution table
     pdf = pd.crosstab(
-        df[prediction_col], 
-        df[target_col], 
-        df['w'], 
-        aggfunc='sum', 
+        df[prediction_col],
+        df[target_col],
+        df['w'],
+        aggfunc='sum',
         normalize='columns'
     ).rename_axis(None, axis=1).reindex(columns=[0, 1], fill_value=0)
     # Calculate cumulative distribution (needed for KS statistic)
@@ -33,11 +33,11 @@ def calculate_roc_metrics(df: pd.DataFrame, prediction_col: str, target_col: str
     gini = 2 * abs(auc - 50)
     # Calculate KS statistic
     ks = (abs(cdf[1] - cdf[0])).max() * 100
-    
+
     return {
-        'auc': float(round(auc,3)),
-        'gini': float(round(gini,3)),
-        'ks': float(round(ks,3))
+        'auc': float(round(auc, 3)),
+        'gini': float(round(gini, 3)),
+        'ks': float(round(ks, 3))
     }
 
 
@@ -45,17 +45,17 @@ def calculate_roc_metrics(df: pd.DataFrame, prediction_col: str, target_col: str
 if __name__ == "__main__":
     # Sample data
     import numpy as np
-    
+
     np.random.seed(42)
     sample_df = pd.DataFrame({
         'predictions': np.random.rand(100),
         'actual': np.random.choice([0, 1], 100),
         'w': np.random.uniform(0.5, 2.0, 100)
     })
-    
+
     # Calculate metrics
     metrics = calculate_roc_metrics(sample_df, 'predictions', 'actual')
-    
+
     # Access results
     print(f"AUC: {metrics['auc']:.2f}")
     print(f"Gini: {metrics['gini']:.2f}")
