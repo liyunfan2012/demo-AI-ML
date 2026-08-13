@@ -41,6 +41,8 @@ $$
 
 ### Model training
 
+Training starts from initial weights \(\mathbf{\beta}^{(0)}\). At each iteration the parameters are updated by gradient descent: \(\mathbf{\beta} \leftarrow \mathbf{\beta} - \lambda \nabla_{\mathbf{\beta}} L(\mathbf{\beta})\), i.e., starting from the initial value, apply \(\beta := \beta - \lambda \times\) (gradient) until convergence.
+
 To find the optimal generator that generates synthetic data can not be separated from real data, we have the optimization
 
 $$

@@ -6,6 +6,7 @@ shown here. A quick `sklearn` implementation and a demo of implementing logistic
 from scratch in `NumPy`, training model with gradient descent, are shown in the notebook.
 
 ## Mathematics 
+### Model Definition
 For a sample with $K$ features, $x_1,\dots, x_K$ and binary label $y\in\{0,1\}$,
 the model with parameters $\beta_0,\dots,\beta_K$ outputs the probability of $y=1$ as
 
@@ -31,7 +32,8 @@ $$
 p_i = f(\mathbf{x}_i;\mathbf{\beta}).
 $$
 
-For $n$ samples, we have the negative log-likelihood as loss fucntion
+### Loss Function and Gradient Descent
+For $n$ samples, we have the negative log-likelihood as loss function
 
 $$
 l(\mathbf{\beta}) = -\frac{1}{n}\sum_{i=1}^n \left[y_i\ln p_i + (1-y_i)\ln(1-p_i)\right].
@@ -78,6 +80,43 @@ and
 
 $$
 \frac{\partial}{\partial\mathbf{\beta}}  l(\mathbf{\beta}) = \frac{1}{n}\sum_{i=1}^n \mathbf{x}_i(p_i-y_i).
+$$
+
+
+
+### Vectorized Derivation
+
+Denote the $n$ $K$-feature records as $X\in \mathbb{R}^{n\times (K+1)}$, whose first column is all 1s, 
+and the labels as $\mathbf{y}\in \mathbb{R}^{n}$. 
+Denote $\mathbf{h} = X\mathbf{\beta}\in \mathbb{R}^{n}$, 
+and the model output as $\mathbf{p} = \sigma(\mathbf{h})\in \mathbb{R}^{n}$ and thus
+
+$$
+\mathbf{1}-\mathbf{p}=\sigma(-\mathbf{h}).
+$$. 
+The loss function is
+$$
+loss(\mathbf{\beta}) =
+-\frac{1}{n}\left[\mathbf{y}^T\ln\sigma(\mathbf{h}) + (\mathbf{1}-\mathbf{y})^T\ln(\sigma(\mathbf{-h}))\right]
+$$
+
+As 
+$$
+\frac{d}{dx}\ln\sigma(x) = 1-\sigma(x), \frac{d}{dx}\ln\sigma(-x) = -\sigma(x),
+$$
+
+and
+
+$$
+\frac{\partial}{\partial \mathbf{u}} f^T(\mathbf{u}) = \text{diag}[f'(\mathbf{u})],
+$$
+
+the loss gradient is
+
+$$
+\frac{\partial}{\partial \mathbf{\beta}} loss(\mathbf{\beta})
+=\frac{\partial \mathbf{h}^T}{\partial \mathbf{\beta}} \frac{\partial}{\partial \mathbf{h}} loss(\mathbf{\beta})
+=-\frac{1}{n}X^T\left[\text{diag}(\mathbf{1}-\sigma(\mathbf{h}))\mathbf{y}-\text{diag}(\sigma(\mathbf{h}))(\mathbf{1}-\mathbf{y})\right]=\frac{1}{n}X^T(\mathbf{p}-\mathbf{y}).
 $$
 
 ## Notebooks
