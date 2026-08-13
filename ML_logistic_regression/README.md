@@ -93,8 +93,10 @@ and the model output as $\mathbf{p} = \sigma(\mathbf{h})\in \mathbb{R}^{n}$ and 
 
 $$
 \mathbf{1}-\mathbf{p}=\sigma(-\mathbf{h}).
-$$. 
+$$
+
 The loss function is
+
 $$
 loss(\mathbf{\beta}) =
 -\frac{1}{n}\left[\mathbf{y}^T\ln\sigma(\mathbf{h}) + (\mathbf{1}-\mathbf{y})^T\ln(\sigma(\mathbf{-h}))\right]
