@@ -102,7 +102,8 @@ loss(\mathbf{\beta}) =
 -\frac{1}{n}\left[\mathbf{y}^T\ln\sigma(\mathbf{h}) + (\mathbf{1}-\mathbf{y})^T\ln(\sigma(\mathbf{-h}))\right]
 $$
 
-As 
+As
+
 $$
 \frac{d}{dx}\ln\sigma(x) = 1-\sigma(x), \frac{d}{dx}\ln\sigma(-x) = -\sigma(x),
 $$
